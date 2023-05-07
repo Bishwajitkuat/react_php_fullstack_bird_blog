@@ -1,0 +1,35 @@
+version: "3.8"
+services:
+  php-apache-environment:
+    container_name: php-apache_bird_blog
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    depends_on:
+      - birdDB
+    volumes:
+      - ./app:/var/www/html/
+    ports:
+      - 8000:80
+  birdDB:
+    container_name: birdDB
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: bisso
+      MYSQL_DATABASE: bissoDB
+      MYSQL_USER: bisso
+      MYSQL_PASSWORD: bisso
+    ports:
+      - "3308:3306"
+    volumes:
+      - ./:/docker-entrypoint-initdb.d
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "9083:80"
+    restart: always
+    environment:
+      PMA_HOST: birdDB
+    depends_on:
+      - birdDB
