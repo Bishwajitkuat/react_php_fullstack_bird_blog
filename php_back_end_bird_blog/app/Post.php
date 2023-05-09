@@ -86,5 +86,22 @@ class Post
             return false;
         };
     }
+// delete post
+    public function delete()
+    {
+// sql quary
+        $quary = "delete from $this->table where id = :id";
+// PDO statement creation
+        $stmt = $this->conn->prepare($quary);
+// binding id to $stmt
+        $stmt->bindParam(':id', $this->id);
+// if deletion successfull
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            echo $stmt->error;
+            return false;
+        }
+    }
 
 }
