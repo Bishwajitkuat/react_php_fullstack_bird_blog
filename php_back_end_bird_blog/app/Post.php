@@ -55,5 +55,36 @@ class Post
         }
         echo json_encode(array("message" => "new post creation failed"));
     }
+// update post
+    public function update()
+    {
+// sql quary
+        $quary = "update $this->table set title = :title, body = :body, author = :author, category = :category, img = :img where id = :id";
+// prepareing PDO statement
+        $stmt = $this->conn->prepare($quary);
+
+// cleaing data
+        $this->title = htmlspecialchars($this->title);
+        $this->body = htmlspecialchars($this->body);
+        $this->author = htmlspecialchars($this->author);
+        $this->category = htmlspecialchars($this->category);
+        $this->id = htmlspecialchars($this->id);
+        $this->img = htmlspecialchars($this->img);
+
+// bind property values with $stmt
+        $stmt->bindParam(':title', $this->title);
+        $stmt->bindParam(':body', $this->body);
+        $stmt->bindParam(':author', $this->author);
+        $stmt->bindParam(':category', $this->category);
+        $stmt->bindParam(':id', $this->id);
+        $stmt->bindParam(':img', $this->img);
+// executing update $stmt
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            echo $stmt->error;
+            return false;
+        };
+    }
 
 }
