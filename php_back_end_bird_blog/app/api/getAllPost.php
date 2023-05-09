@@ -33,6 +33,7 @@ if ($num > 0) {
             'body' => html_entity_decode($body),
             'author' => $author,
             'category' => $category,
+            'img' => $img,
         );
 // pushing each post_item into data array of posts_arr array
         array_push($posts_arr['data'], $post_item);
