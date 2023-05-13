@@ -1,13 +1,28 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const All_post = () => {
   const [posts, setPosts] = useState([]);
-  useEffect(() => {
+
+  const getAll = () => {
     axios.get("http://localhost:8000/api/getAllPost.php").then((response) => {
       setPosts(response.data.data);
     });
+  };
+  useEffect(() => {
+    getAll();
   }, []);
+
+  const handleDelete = (delid) => {
+    axios
+      .post("http://localhost:8000/api/deletePost.php", { id: delid })
+      .then((respose) => {
+        console.log(respose);
+        // alert("deleted");
+        getAll();
+      });
+  };
 
   return (
     <div>
@@ -18,6 +33,10 @@ const All_post = () => {
             <h5>{item.author}</h5>
             <h5>{item.id}</h5>
             <p>{item.body}</p>
+            <button onClick={() => handleDelete(item.id)}> Delete </button>
+            <button>
+              <Link to={`/edit/${item.id}`}>Edite</Link>
+            </button>
           </div>
         );
       })}

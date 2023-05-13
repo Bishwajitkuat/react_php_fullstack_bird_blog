@@ -27,6 +27,27 @@ class Post
 // Return statement
         return $stmt;
     }
+
+// get posts by id
+    public function getById()
+    {
+        $quary = "select id, title, body, author, category, img from $this->table where id=:id";
+        // prepare PDO statement
+        $stmt = $this->conn->prepare($quary);
+
+        $stmt->bindParam(':id', $this->id);
+        // Execute PDO statement
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+// setting property values into
+        $this->id = $row['id'];
+        $this->title = $row['title'];
+        $this->body = $row['body'];
+        $this->author = $row['author'];
+        $this->category = $row['category'];
+        $this->img = $row['img'];
+
+    }
 // Create post
     public function create()
     {

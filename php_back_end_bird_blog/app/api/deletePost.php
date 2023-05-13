@@ -19,7 +19,7 @@ $post = new Post($db);
 // get raw data from the post request
 $data = json_decode(file_get_contents('php://input'));
 
-// setting data to post object
+// // setting data to post object
 $post->id = $data->id;
 
 if ($post->delete()) {
