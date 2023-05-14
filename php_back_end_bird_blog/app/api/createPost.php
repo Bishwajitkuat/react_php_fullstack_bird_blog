@@ -25,9 +25,9 @@ $post->author = $data->author;
 $post->category = $data->category;
 $post->img = $data->img;
 // if post->create() successfull it will return success message and if fails, fail message will return
-
-if ($post->create()) {
-    echo json_encode(array('message' => 'post created'));
-} else {
-    echo json_encode(array('message' => 'post insertion fails'));
-}
+if ($post->title) {
+    if ($post->create()) {
+        echo json_encode(array('message' => 'Post has been created sccessfully!'));
+    } else {
+        echo json_encode(array('message' => 'post insertion fails'));
+    }}

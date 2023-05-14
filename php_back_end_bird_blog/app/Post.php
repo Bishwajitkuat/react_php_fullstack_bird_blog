@@ -19,7 +19,7 @@ class Post
 // get posts
     public function getAllPost()
     {
-        $quary = "select id, title, body, author, category, img from $this->table";
+        $quary = "select id, title, body, author, category, img from $this->table order by id desc";
 // prepare PDO statement
         $stmt = $this->conn->prepare($quary);
 // Execute PDO statement

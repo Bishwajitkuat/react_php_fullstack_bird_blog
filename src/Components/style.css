@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ########### App ########## */
+header,
+body {
+  color: white;
+  width: 80vw;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  background-color: black;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 10vh;
+  margin-bottom: 1rem;
+}
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+nav ul li {
+  list-style: none;
+  background-color: rgba(128, 128, 128, 0.335);
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+}
+nav ul li a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: aquamarine;
+}
+.main {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* ########## AllPost ############ */
+.postParent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+.postImg {
+  width: 300px;
+  float: left;
+  border-radius: 0.5rem;
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.post p {
+  text-align: justify;
+  line-height: 1.5;
+}
+.postBtns {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 1rem;
+}
+.postBtns button {
+  color: black;
+  padding: 0.25rem 0.5rem;
+}
+
+.postBtns button a {
+  color: black;
+  padding: 0.25rem 0.5rem;
+  text-decoration: none;
+}
+
+/* ############## Create_post and Update_post ############# */
+.createUpdate {
+  min-width: 50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.createUpdate form {
+  min-width: 50vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: left;
+}
+
+.createUpdate form div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.createUpdate form div input {
+  height: 3rem;
+  border-radius: 0.5rem;
+}
+.createUpdate form div label:after {
+  content: " *";
+  color: red;
+}
+.createUpdate form div textarea {
+  border-radius: 0.5rem;
+  line-height: 1.5;
+}
+.createUpdate form div label {
+  font-size: 1.5rem;
+}
+.submitBtn {
+  align-self: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+}
+
+/* ############# About ##############  */
+.about {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.about p {
+  text-align: justify;
+  line-height: 1.5;
+}

@@ -1,6 +1,7 @@
 import { useState, React, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import "./style.css";
 
 const Edite_post = () => {
   const [id, setId] = useState(useParams().id);
@@ -41,27 +42,30 @@ const Edite_post = () => {
   };
 
   return (
-    <div className="App">
-      <form onSubmit={updateHandler}>
+    <div className="createUpdate">
+      <form onSubmit={updateHandler} action="/">
         <div>
-          <label htmlFor="title">title</label>
+          <label htmlFor="title">Title</label>
           <input
             type="text"
             name="title"
             onChange={(e) => setTitle(e.target.value)}
             value={title}
             id="title"
+            required
           />
         </div>
         <div>
           <label htmlFor="body">Body</label>
-          <input
+          <textarea
             type="textarea"
             name="body"
             onChange={(e) => setBody(e.target.value)}
             id="body"
             value={body}
-          />
+            rows={30}
+            required
+          ></textarea>
         </div>
         <div>
           <label htmlFor="author">Author</label>
@@ -71,6 +75,7 @@ const Edite_post = () => {
             onChange={(e) => setAuthor(e.target.value)}
             id="author"
             value={author}
+            required
           />
         </div>
         <div>
@@ -81,6 +86,7 @@ const Edite_post = () => {
             onChange={(e) => setCategory(e.target.value)}
             id="category"
             value={category}
+            required
           />
         </div>
         <div>
@@ -91,9 +97,10 @@ const Edite_post = () => {
             onChange={(e) => setImg(e.target.value)}
             id="img"
             value={img}
+            required
           />
         </div>
-        <input type="submit" value="Save" />
+        <input className="submitBtn" type="submit" value="Save" />
       </form>
     </div>
   );

@@ -23,7 +23,7 @@ $data = json_decode(file_get_contents('php://input'));
 $post->id = $data->id;
 
 if ($post->delete()) {
-    echo json_encode(array('message' => 'delete success'));
+    echo json_encode(array('message' => 'The post has been successfully deleted!'));
 } else {
     echo json_encode(array('message' => 'delete failed'));
 }

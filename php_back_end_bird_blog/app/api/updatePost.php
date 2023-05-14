@@ -30,7 +30,7 @@ $post->img = $data->img;
 // if post->create() successfull it will return success message and if fails, fail message will return
 
 if ($post->update()) {
-    echo json_encode(array('message' => 'post updated'));
+    echo json_encode(array('message' => 'Post updated successfully'));
 } else {
     echo json_encode(array('message' => 'post not updated'));
 }
