@@ -45,6 +45,7 @@ npm start
 
 - PHP
 - React
+- MySQL
 - JS
 - CSS
 - Axios
