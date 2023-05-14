@@ -3,7 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import "./style.css";
 
-const Edite_post = () => {
+const EditPost = () => {
   const [id, setId] = useState(useParams().id);
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
@@ -43,6 +43,7 @@ const Edite_post = () => {
 
   return (
     <div className="createUpdate">
+      <h2>Update post</h2>
       <form onSubmit={updateHandler} action="/">
         <div>
           <label htmlFor="title">Title</label>
@@ -106,4 +107,4 @@ const Edite_post = () => {
   );
 };
 
-export default Edite_post;
+export default EditPost;

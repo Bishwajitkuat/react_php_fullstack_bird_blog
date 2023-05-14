@@ -2,7 +2,7 @@ import { useState, React } from "react";
 import axios from "axios";
 import "./style.css";
 
-const Create_post = () => {
+const CreatePost = () => {
   const [inputs, setInput] = useState();
   const submitHandler = (e) => {
     axios
@@ -75,4 +75,4 @@ const Create_post = () => {
   );
 };
 
-export default Create_post;
+export default CreatePost;
