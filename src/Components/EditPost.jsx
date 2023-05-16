@@ -80,7 +80,7 @@ const EditPost = () => {
           />
         </div>
         <div>
-          <label htmlFor="category">Catetory</label>
+          <label htmlFor="category">Category</label>
           <input
             type="text"
             name="category"

@@ -1,6 +1,6 @@
 # Bird Blog
 
-## Full stack CRUD App with Reach in fontend and PHP in backend
+## Full stack CRUD App with React in fontend and PHP in backend
 
 ## Description
 
