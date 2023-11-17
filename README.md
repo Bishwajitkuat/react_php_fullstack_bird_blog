@@ -4,7 +4,11 @@
 
 ## Description
 
-This full stack app project is part of my PHP course in Helsinki Business College. I have tried to focus on backend more however the erro handling is not upto the mark yet
+This a simple bird blog website. I have used PHP to create the backend where API routes are created for read, write, update and delete posts. Data are stored into MySQL data base. In the fontend I have used React where data from backed is fetched through Axios and rendered into browser.
+
+This full stack app project is part of my PHP course in Helsinki Business College. I have tried to focus on backend more however the erro handling is not upto the mark yet.
+
+<img src="bard_blog.png" alt="project image">
 
 ## Setting up the environment
 
